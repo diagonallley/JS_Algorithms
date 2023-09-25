@@ -134,7 +134,7 @@ function isAnagram3(str1, str2) {
         } else {
             lookup[letter] -= 1;
         }
-       
+
 
 
     }
@@ -143,3 +143,6 @@ function isAnagram3(str1, str2) {
 }
 
 console.log(`This is from anagram3: ${isAnagram3("string", "gnstri")}`)
+
+
+
