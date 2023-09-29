@@ -44,7 +44,7 @@ function maxSubArraySum2(arr, num) {
 
     for (j = num; j < arr.length; j++) {
         tempSum = maxSum - arr[j - num] + arr[j];
-        maxSum = Math.max(tempSum, maxSum);
+        tempSum = Math.max(tempSum, maxSum);
     }
 
     return maxSum;
