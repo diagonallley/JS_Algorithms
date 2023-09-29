@@ -87,3 +87,61 @@ function selectionSort(arr) {
     }
     return arr;
 }
+
+
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let value = arr[i];                                     // ? value=> i => 1, j=0  => arr[0] > arr[1]
+
+        for (var j = i - 1; j >= 0 && arr[j] > value; j--) {
+            arr[j + 1] = arr[j];
+        }
+
+        arr[j + 1] = value;
+    }
+
+    return arr;
+}
+
+
+
+function insertionSort2(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let value = arr[i];
+
+        for (var j = i - 1; j >= 0 && arr[j + 1] > value; j--) {
+            arr[j + 1] = arr[j];
+        }
+
+        arr[j + 1] = value;
+
+
+    }
+    return arr;
+
+
+
+}
+
+
+function insertionSort3(arr) {
+
+    for (let i = 1; i < arr.length; i++) {
+        let value = arr[i];
+
+        for (var j = i - 1; j >= 0 && arr[j] > value; j--) {
+            arr[j + 1] = arr[j];
+
+        }
+        arr[j + 1] = value;
+    }
+    return arr;
+}
+
+
+
+
+
+console.log(insertionSort([1, 2, 22, 12, 43, 3]));
+console.log(insertionSort([1, 2, 22, 12, 43, 3]));
+console.log(insertionSort3([1, 2, 22, 12, 43, 3]))
