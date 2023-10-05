@@ -28,6 +28,7 @@ class Stack {
         }
 
         return ++this.size; 
+        
 
     }
 
