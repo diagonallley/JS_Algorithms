@@ -1,0 +1,38 @@
+class HashTable {
+    constructor(size = 53) {
+        this.keyMap = new Array(size);
+
+    }
+
+    _hash(key) {
+        let total = 0;
+        let WEIRD_PRIME = 31;
+        for (let i = 0; i < (Math.min(key.length, 100)); i++) {
+            let char = key[i];
+            let value = char.charCodeAt(0) - 96;
+            total = (total * WEIRD_PRIME + value) % this.keyMap.length;
+        }
+        return total;
+    }
+
+
+    set(key, value) {
+        let hashKey = this._hash(key);
+        // console.info(hashKey);
+
+        if (this.keyMap[hashKey] && this.keyMap[hashKey][0]) {
+            this.keyMap[hashKey][0].push([key, value]);
+        } else {
+            let push = new Array();
+            push.push(key);
+            push.push(value);
+
+            this.keyMap[hashKey] = [push];
+        }
+    }
+}
+
+let table = new HashTable();
+table.set("pink", "#ase112");
+
+console.log(table.keyMap);
